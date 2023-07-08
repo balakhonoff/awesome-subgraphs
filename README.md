@@ -1,7 +1,9 @@
 # awesome-subgraphs
-I am collecting best resourses for [The Graph](https://thegraph.com/) powered subgraph development. Feel free to send me any related links in [Twitter](https://twitter.com/balakhonoff) or [Telegram](https://t.me/kirill_balakhonov) to add them here.
+I am collecting best resourses for [The Graph](https://thegraph.com/) powered subgraph development. 
 
-# Official documentation
+Feel free to send me any related links in [Twitter](https://twitter.com/balakhonoff) or [Telegram](https://t.me/kirill_balakhonov) to add them here.
+
+# Useful links from the official documentation
 - [Creating a subgraph](https://thegraph.com/docs/en/developing/creating-a-subgraph/)
 - [Supported networks](https://thegraph.com/docs/en/developing/supported-networks/)
 - [AssemblyScript API](https://thegraph.com/docs/en/developing/assemblyscript-api/)
@@ -16,16 +18,25 @@ I am collecting best resourses for [The Graph](https://thegraph.com/) powered su
 - [Substreams-powered subgraphs](https://thegraph.com/docs/en/cookbook/substreams-powered-subgraphs/)
 
 # Tutorials
+- [A beginner’s guide to getting started with The Graph](https://docs.chainstack.com/docs/subgraphs-tutorial-a-beginners-guide-to-getting-started-with-the-graph)
 - [How to access real-time smart contract data from Python code (using Lido contract as an example)](https://medium.com/@balakhonoff_47314/how-to-access-real-time-smart-contract-data-from-python-code-using-lido-as-an-example-38738ff077c5)
 - [Web3 Indexing: The Ultimate Guide (No Prior Knowledge Required)](https://hackernoon.com/web3-indexing-the-ultimate-guide-no-prior-knowledge-required)
+- [Explaining Subgraph schemas](https://docs.chainstack.com/docs/subgraphs-tutorial-working-with-schemas)
+- [Debugging subgraphs with a local Graph Node](https://docs.chainstack.com/docs/subgraphs-tutorial-debug-subgraphs-with-a-local-graph-node)
+- [Indexing ERC-20 token balance using Subgraphs](https://docs.chainstack.com/docs/subgraphs-tutorial-indexing-erc-20-token-balance)
+- [Indexing Uniswap data with Subgraphs](https://docs.chainstack.com/docs/subgraphs-tutorial-indexing-uniswap-data)
+- [Fetching subgraph data using JS](https://docs.chainstack.com/docs/subgraphs-tutorial-indexing-uniswap-data)
 - [How to access the Tornado Cash data easily using The Graph’s subgraphs](https://medium.com/@balakhonoff_47314/how-to-access-the-tornado-cash-data-easily-using-the-graphs-subgraphs-a70a7e21449d)
 - [How to access transactions of PEPE coin using The Graph subgraphs](https://medium.com/@balakhonoff_47314/tutorial-how-to-access-transactions-of-pepe-pepe-coin-using-the-graph-subgraphs-and-chatgpt-5cb4349fbf9e)
 - [The Graph Tutorial: Creating a Subgraph](https://mirror.xyz/0xB38709B8198d147cc9Ff9C133838a044d78B064B/DdiikBvOLngfOotpqNEoi7gIy9RDlEr0Ztv4yWlYyzc)
-
-
-# Articles in Web3 Development courses
-[Indexing data using The Graph's Indexer](https://learnweb3.io/lessons/indexing-data-using-the-graphs-indexer/) by LearnWeb3
-
+- [Notifications from a Subgraph using Push](https://docs.push.org/developers/developer-guides/sending-notifications/using-subgraph-gasless)
+- [How to properly request JSON metadata stored in IPFS for your "The Graph" Subgraph](https://blog.developerdao.com/how-to-properly-request-json-metadata-stored-in-ipfs-for-your-the-graph-subgraph)
+- [Building a Full Stack Web3 YouTube Clone with Next, IPFS, The Graph, Solidity, and Livepeer](https://blog.suhailkakar.com/building-a-full-stack-web3-youtube-clone-with-next-ipfs-the-graph-solidity-and-livepeer)
+- [Subgraph Development](https://docs.blastapi.io/indexing/subgraph-development)
+- [How to Integrate The Graph and Create and Deploy a Subgraph](https://nodereal.io/tutorials/how-to-integrate-with-thegraph-using-meganode-archive-node/)
+- [Web3 data querying with The Graph and subgraphs](https://blog.logrocket.com/web3-data-querying-the-graph-subgraphs/)
+- [Create Lens Subgraph on The Graph Protocol](https://blog.devgenius.io/create-lens-subgraph-on-the-graph-protocol-8acfbac94ea8)
+- [Indexing data using The Graph's Indexer by LearnWeb3](https://learnweb3.io/lessons/indexing-data-using-the-graphs-indexer/) 
 
 # Videos
 - [Build a Subgraph in 5 Minutes: Supercharging Your DApp](https://www.youtube.com/watch?v=L8jYtr4omKM)
@@ -36,13 +47,12 @@ I am collecting best resourses for [The Graph](https://thegraph.com/) powered su
 - [Building Rich APIs on top of Ethereum with The Graph](https://www.youtube.com/watch?v=wrV7cMebwyE)
 - [Building Subgraphs with The Graph](https://www.youtube.com/watch?v=ct1UMSpZLgk&t=9s)
 
-
 # Tools
 - [The Graph Hosted service](https://thegraph.com/hosted-service)
 - [SubgraphGPT](https://t.me/SubgraphGPT_bot)
 
 # Subgraphs hostings
-- [Chainstack Subgraphs](https://chainstack.com/subgraphs/)
+- [Chainstack](https://chainstack.com/subgraphs/)
 - [Satsuma](https://www.satsuma.xyz/)
 - [Goldsky](https://goldsky.com/)
 
