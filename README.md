@@ -1,4 +1,4 @@
-# awesome-subgraphs
+# Awesome Subgraphs
 I am collecting best resourses for [The Graph](https://thegraph.com/) powered subgraph development. 
 
 Feel free to send me any related links in [Twitter](https://twitter.com/balakhonoff) or [Telegram](https://t.me/kirill_balakhonov) to add them here.
