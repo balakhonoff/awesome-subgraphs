@@ -61,5 +61,5 @@ Feel free to send me any related links in [Twitter](https://twitter.com/balakhon
 - [Subgraph Toolkit](https://github.com/protofire/subgraph-toolkit). A collection of utilities and helpers to support the development of subgraphs
 - [Subgraph Query Portal](https://github.com/Evan-Kim2028/subgraph-query-portal). A collection of reusable public goods subgraph queries.
 - [Subgrounds](https://github.com/0xPlaygrounds/subgrounds). An intuitive python library for interfacing with Subgraphs.
-- [Example subgrpha by The Graph](https://github.com/graphprotocol/example-subgraph). An example to help you get started with The Graph
+- [Example subgraph by The Graph](https://github.com/graphprotocol/example-subgraph). An example to help you get started with The Graph
 
