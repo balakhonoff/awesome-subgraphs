@@ -5,7 +5,7 @@ versions.ts
 deploymentJsonContext.json
 **/configurations/configure.ts
 generated/
-subgraphs/**/build/
+build/
 
 **/.DS_Store
 
