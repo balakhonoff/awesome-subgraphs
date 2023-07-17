@@ -1,0 +1,7 @@
+type Balance @entity {
+  id: Bytes!
+  value: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

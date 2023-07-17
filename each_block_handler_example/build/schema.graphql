@@ -1,6 +1,0 @@
-type Block @entity {
-  id: ID!
-  blockNumber: BigInt!
-  timestamp: BigInt!
-  parentHash: Bytes!
-}

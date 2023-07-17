@@ -1,0 +1,22 @@
+type Deposit @entity(immutable: true) {
+  id: Bytes!
+  from_: Bytes!
+  value_: BigInt!
+  commitment: Bytes! # bytes32
+  leafIndex: BigInt! # uint32
+  timestamp: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Withdrawal @entity(immutable: true) {
+  id: Bytes!
+  to: Bytes! # address
+  nullifierHash: Bytes! # bytes32
+  relayer: Bytes! # address
+  fee: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

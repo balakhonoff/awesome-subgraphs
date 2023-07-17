@@ -1,0 +1,4 @@
+type Balance @entity {
+  id: Bytes!
+  value: BigInt! # uint256
+}

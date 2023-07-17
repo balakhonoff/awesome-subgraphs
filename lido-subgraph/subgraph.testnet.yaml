@@ -1,0 +1,328 @@
+specVersion: 0.0.4
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Lido
+    network: goerli
+    source:
+      address: '0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F'
+      abi: Lido
+      startBlock: 4533286
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - LidoStopped
+        - LidoResumed
+        - LidoTransfer
+        - LidoApproval
+        - LidoFee
+        - LidoFeeDistribution
+        - LidoWithdrawalCredential
+        - LidoSubmission
+        - LidoUnbuffered
+        - LidoWithdrawal
+        - ELRewardsVaultSet
+        - ELRewardsWithdrawalLimitSet
+        - ProtocolContactsSet
+        - StakingLimitRemove
+        - StakingLimitSet
+        - StakingResume
+        - StakingPause
+        - SharesTransfer
+        - SharesBurn
+        - Settings
+      abis:
+        - name: Lido
+          file: ./abis/Lido.json
+        - name: NodeOperatorsRegistry
+          file: ./abis/NodeOperatorsRegistry.json
+      eventHandlers:
+        - event: Stopped()
+          handler: handleStopped
+        - event: Resumed()
+          handler: handleResumed
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+        - event: Approval(indexed address,indexed address,uint256)
+          handler: handleApproval
+        - event: FeeSet(uint16)
+          handler: handleFeeSet
+        - event: FeeDistributionSet(uint16,uint16,uint16)
+          handler: handleFeeDistributionSet
+        - event: WithdrawalCredentialsSet(bytes32)
+          handler: handleWithdrawalCredentialsSet
+        - event: Submitted(indexed address,uint256,address)
+          handler: handleSubmit
+        - event: Unbuffered(uint256)
+          handler: handleUnbuffered
+        - event: Withdrawal(indexed address,uint256,uint256,indexed bytes32,uint256)
+          handler: handleWithdrawal
+        - event: MevTxFeeReceived(uint256)
+          handler: handleELRewardsReceived
+        - event: BeaconValidatorsUpdated(uint256)
+          handler: handleBeaconValidatorsUpdated
+        - event: ELRewardsVaultSet(address)
+          handler: handleELRewardsVaultSet
+        - event: ELRewardsReceived(uint256)
+          handler: handleELRewardsReceived
+        - event: ELRewardsWithdrawalLimitSet(uint256)
+          handler: handleELRewardsWithdrawalLimitSet
+        - event: ProtocolContactsSet(address,address,address)
+          handler: handleProtocolContactsSet
+        - event: StakingLimitRemoved()
+          handler: handleStakingLimitRemoved
+        - event: StakingLimitSet(uint256,uint256)
+          handler: handleStakingLimitSet
+        - event: StakingResumed()
+          handler: handleStakingResumed
+        - event: StakingPaused()
+          handler: handleStakingPaused
+        - event: TransferShares(indexed address,indexed address,uint256)
+          handler: handleTransferShares
+        - event: SharesBurnt(indexed address,uint256,uint256,uint256)
+          handler: handleSharesBurnt
+      blockHandlers:
+        - handler: handleTestnetBlock
+          filter:
+            kind: call
+      file: ./src/Lido.ts
+  - kind: ethereum/contract
+    name: LidoOracle
+    network: goerli
+    source:
+      address: '0x24d8451BC07e7aF4Ba94F69aCDD9ad3c6579D9FB'
+      abi: LidoOracle
+      startBlock: 4533286
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - OracleCompleted
+        - OracleMember
+        - OracleQuorumChange
+        - SharesToStethRatio
+        - OracleVersion
+        - AllowedBeaconBalanceRelativeDecrease
+        - AllowedBeaconBalanceAnnualRelativeIncrease
+        - OracleExpectedEpoch
+        - OracleTotalShares
+        - BeaconReport
+        - BeaconSpec
+        - BeaconReportReceiver
+      abis:
+        - name: LidoOracle
+          file: ./abis/LidoOracle.json
+        - name: Lido
+          file: ./abis/Lido.json
+        - name: NodeOperatorsRegistry
+          file: ./abis/NodeOperatorsRegistry.json
+      eventHandlers:
+        - event: Completed(uint256,uint128,uint128)
+          handler: handleCompleted
+        - event: MemberAdded(address)
+          handler: handleMemberAdded
+        - event: MemberRemoved(address)
+          handler: handleMemberRemoved
+        - event: QuorumChanged(uint256)
+          handler: handleQuorumChanged
+        - event: ContractVersionSet(uint256)
+          handler: handleContractVersionSet
+        - event: PostTotalShares(uint256,uint256,uint256,uint256)
+          handler: handlePostTotalShares
+        - event: BeaconReported(uint256,uint128,uint128,address)
+          handler: handleBeaconReported
+        - event: BeaconSpecSet(uint64,uint64,uint64,uint64)
+          handler: handleBeaconSpecSet
+        - event: ExpectedEpochIdUpdated(uint256)
+          handler: handleExpectedEpochIdUpdated
+        - event: BeaconReportReceiverSet(address)
+          handler: handleBeaconReportReceiverSet
+        - event: AllowedBeaconBalanceRelativeDecreaseSet(uint256)
+          handler: handleAllowedBeaconBalanceRelativeDecreaseSet
+        - event: AllowedBeaconBalanceAnnualRelativeIncreaseSet(uint256)
+          handler: handleAllowedBeaconBalanceAnnualRelativeIncreaseSet
+      file: ./src/LidoOracle.ts
+  - kind: ethereum/contract
+    name: NodeOperatorsRegistry
+    network: goerli
+    source:
+      address: '0x9D4AF1Ee19Dad8857db3a45B0374c81c8A1C6320'
+      abi: NodeOperatorsRegistry
+      startBlock: 4533286
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - NodeOperatorSigningKey
+        - NodeOperator
+      abis:
+        - name: NodeOperatorsRegistry
+          file: ./abis/NodeOperatorsRegistry.json
+      eventHandlers:
+        - event: NodeOperatorAdded(uint256,string,address,uint64)
+          handler: handleNodeOperatorAdded
+        - event: NodeOperatorActiveSet(indexed uint256,bool)
+          handler: handleNodeOperatorActiveSet
+        - event: NodeOperatorNameSet(indexed uint256,string)
+          handler: handleNodeOperatorNameSet
+        - event: NodeOperatorRewardAddressSet(indexed uint256,address)
+          handler: handleNodeOperatorRewardAddressSet
+        - event: NodeOperatorStakingLimitSet(indexed uint256,uint64)
+          handler: handleNodeOperatorStakingLimitSet
+        - event: NodeOperatorTotalStoppedValidatorsReported(indexed uint256,uint64)
+          handler: handleNodeOperatorTotalStoppedValidatorsReported
+        - event: SigningKeyAdded(indexed uint256,bytes)
+          handler: handleSigningKeyAdded
+        - event: SigningKeyRemoved(indexed uint256,bytes)
+          handler: handleSigningKeyRemoved
+        - event: NodeOperatorTotalKeysTrimmed(indexed uint256,uint64)
+          handler: handleNodeOperatorTotalKeysTrimmed
+        - event: KeysOpIndexSet(uint256)
+          handler: handleKeysOpIndexSet
+      file: ./src/NodeOperatorsRegistry.ts
+  - kind: ethereum/contract
+    name: Voting
+    network: goerli
+    source:
+      address: '0xbc0B67b4553f4CF52a913DE9A6eD0057E2E758Db'
+      abi: Voting
+      startBlock: 4533286
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Voting
+        - Vote
+        - ChangedSupportRequired
+        - ChangedMinQuorum
+        - VotingObjection
+        - ChangedVoteTime
+        - ChangedObjectionPhaseTime
+      abis:
+        - name: Voting
+          file: ./abis/Voting.json
+      eventHandlers:
+        - event: StartVote(indexed uint256,indexed address,string)
+          handler: handleStartVote
+        - event: CastVote(indexed uint256,indexed address,bool,uint256)
+          handler: handleCastVote
+        - event: CastObjection(indexed uint256,indexed address,uint256)
+          handler: handleCastObjection
+        - event: ExecuteVote(indexed uint256)
+          handler: handleExecuteVote
+        - event: ChangeSupportRequired(uint64)
+          handler: handleChangeSupportRequired
+        - event: ChangeMinQuorum(uint64)
+          handler: handleChangeMinQuorum
+        - event: ChangeVoteTime(uint64)
+          handler: handleChangeVoteTime
+        - event: ChangeObjectionPhaseTime(uint64)
+          handler: handleChangeObjectionPhaseTime
+      file: ./src/Voting.ts
+  - kind: ethereum/contract
+    name: Easytrack
+    network: goerli
+    source:
+      address: '0xAf072C8D368E4DD4A9d4fF6A76693887d6ae92Af'
+      abi: Easytrack
+      startBlock: 5574270
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Motion
+        - EasyTrackConfig
+        - Role
+        - EVMScriptFactory
+        - Objection
+      abis:
+        - name: Easytrack
+          file: ./abis/Easytrack.json
+      eventHandlers:
+        - event: EVMScriptExecutorChanged(indexed address)
+          handler: handleEVMScriptExecutorChanged
+        - event: EVMScriptFactoryAdded(indexed address,bytes)
+          handler: handleEVMScriptFactoryAdded
+        - event: EVMScriptFactoryRemoved(indexed address)
+          handler: handleEVMScriptFactoryRemoved
+        - event: MotionCanceled(indexed uint256)
+          handler: handleMotionCanceled
+        - event: MotionCreated(indexed uint256,address,indexed address,bytes,bytes)
+          handler: handleMotionCreated
+        - event: MotionDurationChanged(uint256)
+          handler: handleMotionDurationChanged
+        - event: MotionEnacted(indexed uint256)
+          handler: handleMotionEnacted
+        - event: MotionObjected(indexed uint256,indexed address,uint256,uint256,uint256)
+          handler: handleMotionObjected
+        - event: MotionRejected(indexed uint256)
+          handler: handleMotionRejected
+        - event: MotionsCountLimitChanged(uint256)
+          handler: handleMotionsCountLimitChanged
+        - event: ObjectionsThresholdChanged(uint256)
+          handler: handleObjectionsThresholdChanged
+        - event: Paused(address)
+          handler: handlePaused
+        - event: Unpaused(address)
+          handler: handleUnpaused
+        - event: RoleAdminChanged(indexed bytes32,indexed bytes32,indexed bytes32)
+          handler: handleRoleAdminChanged
+        - event: RoleGranted(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleGranted
+        - event: RoleRevoked(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleRevoked
+      file: ./src/Easytrack.ts
+  - kind: ethereum/contract
+    name: DepositSecurityModule
+    network: goerli
+    source:
+      address: '0xEd23AD3EA5Fb9d10e7371Caef1b141AD1C23A80c'
+      abi: DepositSecurityModule
+      startBlock: 5692116
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - DepositSecurityModuleSettings
+        - DepositsPause
+        - DepositsUnpause
+        - Guardian
+        - GuardianQuorumChange
+        - MaxDepositsChange
+        - MinDepositBlockDistanceChange
+        - NodeOperatorsRegistryChange
+        - OwnerChange
+        - PauseIntentValidityPeriodBlocksChange
+      abis:
+        - name: DepositSecurityModule
+          file: ./abis/DepositSecurityModule.json
+      eventHandlers:
+        - event: DepositsPaused(address)
+          handler: handleDepositsPaused
+        - event: DepositsUnpaused()
+          handler: handleDepositsUnpaused
+        - event: GuardianAdded(address)
+          handler: handleGuardianAdded
+        - event: GuardianQuorumChanged(uint256)
+          handler: handleGuardianQuorumChanged
+        - event: GuardianRemoved(address)
+          handler: handleGuardianRemoved
+        - event: MaxDepositsChanged(uint256)
+          handler: handleMaxDepositsChanged
+        - event: MinDepositBlockDistanceChanged(uint256)
+          handler: handleMinDepositBlockDistanceChanged
+        - event: NodeOperatorsRegistryChanged(address)
+          handler: handleNodeOperatorsRegistryChanged
+        - event: OwnerChanged(address)
+          handler: handleOwnerChanged
+        - event: PauseIntentValidityPeriodBlocksChanged(uint256)
+          handler: handlePauseIntentValidityPeriodBlocksChanged
+      file: ./src/DepositSecurityModule.ts

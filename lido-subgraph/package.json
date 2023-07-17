@@ -1,0 +1,42 @@
+{
+  "name": "lido-subgraph",
+  "license": "MIT",
+  "scripts": {
+    "codegen": "graph codegen subgraph.mainnet.yaml",
+    "codegen-testnet": "graph codegen subgraph.testnet.yaml",
+    "build": "graph build subgraph.mainnet.yaml",
+    "build-testnet": "graph build subgraph.testnet.yaml",
+    "test": "yarn test:errors && yarn test:sync && yarn test:withoutStatus",
+    "test:hosted": "yarn test:errors && yarn test:sync && yarn test:withoutStatus --testPathIgnorePatterns addressShares balances",
+    "test:withoutStatus": "NODE_OPTIONS=--experimental-vm-modules jest --testPathIgnorePatterns isSynced isErrored",
+    "test:sync": "NODE_OPTIONS=--experimental-vm-modules jest tests/isSynced.test.js",
+    "test:errors": "NODE_OPTIONS=--experimental-vm-modules jest tests/isNotErrored.test.js",
+    "test:totals": "yarn test:sync && NODE_OPTIONS=--experimental-vm-modules jest tests/totalPooledEth.test.js tests/totalShares.test.js",
+    "test:dust": "NODE_OPTIONS=--experimental-vm-modules jest tests/noWrongDust.test.js",
+    "test:graphBalance": "NODE_OPTIONS=--experimental-vm-modules yarn jest --testMatch='**/tests/graphBalance.test.off.js'",
+    "test:smoke": "NODE_OPTIONS=--experimental-vm-modules yarn jest --testMatch='**/tests/smoke.test.js'",
+    "unit-test": "graph test",
+    "deploy": "graph deploy --product hosted-service --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ lidofinance/lido subgraph.mainnet.yaml",
+    "deploy-testnet": "graph deploy --product hosted-service --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ lidofinance/lido-testnet subgraph.testnet.yaml",
+    "create-local": "env-cmd --use-shell graph create --node '$GRAPH_NODE' lidofinance/lido",
+    "remove-local": "env-cmd --use-shell graph remove --node '$GRAPH_NODE' lidofinance/lido",
+    "deploy-local": "env-cmd --use-shell graph deploy --node '$GRAPH_NODE' --ipfs '$GRAPH_IPFS' lidofinance/lido subgraph.mainnet.yaml",
+    "create-local-testnet": "env-cmd --use-shell graph create --node '$GRAPH_NODE' lidofinance/lido-testnet",
+    "remove-local-testnet": "env-cmd --use-shell graph remove --node '$GRAPH_NODE' lidofinance/lido-testnet",
+    "deploy-local-testnet": "env-cmd --use-shell graph deploy --node '$GRAPH_NODE' --ipfs '$GRAPH_IPFS' lidofinance/lido-testnet subgraph.testnet.yaml"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.35.0",
+    "@graphprotocol/graph-ts": "0.29.0"
+  },
+  "devDependencies": {
+    "@jest/types": "29.3.1",
+    "dotenv": "16.0.3",
+    "env-cmd": "10.1.0",
+    "ethers": "5.7.2",
+    "graphql": "16.6.0",
+    "graphql-request": "5.0.0",
+    "jest": "29.3.1",
+    "matchstick-as": "0.5.0"
+  }
+}
