@@ -1,0 +1,27 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: FriendtechSharesV1
+    network: base
+    source:
+      address: "0xCF205808Ed36593aa40a44F10c7f7C2F67d4A4d4"
+      abi: FriendtechSharesV1
+      startBlock: 2430439
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - OwnershipTransferred
+        - Trade
+      abis:
+        - name: FriendtechSharesV1
+          file: ./abis/FriendtechSharesV1.json
+      eventHandlers:
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: Trade(address,address,bool,uint256,uint256,uint256,uint256,uint256)
+          handler: handleTrade
+      file: ./src/friendtech-shares-v-1.ts

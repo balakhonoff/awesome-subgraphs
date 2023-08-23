@@ -1,0 +1,23 @@
+type OwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Trade @entity(immutable: true) {
+  id: Bytes!
+  trader: Bytes! # address
+  subject: Bytes! # address
+  isBuy: Boolean! # bool
+  shareAmount: BigInt! # uint256
+  ethAmount: BigInt! # uint256
+  protocolEthAmount: BigInt! # uint256
+  subjectEthAmount: BigInt! # uint256
+  supply: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
