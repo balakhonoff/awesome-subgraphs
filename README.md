@@ -3,19 +3,10 @@ A curated list of awesome resources related to [The Graph](https://thegraph.com/
 
 Feel free to send me any related links in [Twitter](https://twitter.com/balakhonoff) or [Telegram](https://t.me/kirill_balakhonov) to add them here.
 
-# Useful links from the official documentation
-- [Creating a subgraph](https://thegraph.com/docs/en/developing/creating-a-subgraph/)
-- [Supported networks](https://thegraph.com/docs/en/developing/supported-networks/)
-- [AssemblyScript API](https://thegraph.com/docs/en/developing/assemblyscript-api/)
-- [Developer FAQs](https://thegraph.com/docs/en/developing/developer-faqs/)
-- [Query The Graph](https://thegraph.com/docs/en/querying/querying-the-graph/)
-- [Querying Best Practices](https://thegraph.com/docs/en/querying/querying-best-practices/)
-- [Querying from an Application](https://thegraph.com/docs/en/querying/querying-from-an-application/)
-- [GraphQL API](https://thegraph.com/docs/en/querying/graphql-api/)
-- [Subgraphs on NEAR](https://thegraph.com/docs/en/cookbook/near/)
-- [Subgraphs on Cosmos](https://thegraph.com/docs/en/cookbook/cosmos/)
-- [Subgraphs on Arweave](https://thegraph.com/docs/en/cookbook/arweave/)
-- [Substreams-powered subgraphs](https://thegraph.com/docs/en/cookbook/substreams-powered-subgraphs/)
+# Subgraphs hostings
+- [Chainstack](https://chainstack.com/subgraphs/)
+- [Satsuma](https://www.satsuma.xyz/)
+- [Goldsky](https://goldsky.com/)
 
 # Tutorials
 - [A beginner’s guide to getting started with The Graph](https://docs.chainstack.com/docs/subgraphs-tutorial-a-beginners-guide-to-getting-started-with-the-graph)
@@ -48,14 +39,23 @@ Feel free to send me any related links in [Twitter](https://twitter.com/balakhon
 - [Building Rich APIs on top of Ethereum with The Graph](https://www.youtube.com/watch?v=wrV7cMebwyE)
 - [Building Subgraphs with The Graph](https://www.youtube.com/watch?v=ct1UMSpZLgk&t=9s)
 
+# Useful links from the official documentation
+- [Creating a subgraph](https://thegraph.com/docs/en/developing/creating-a-subgraph/)
+- [Supported networks](https://thegraph.com/docs/en/developing/supported-networks/)
+- [AssemblyScript API](https://thegraph.com/docs/en/developing/assemblyscript-api/)
+- [Developer FAQs](https://thegraph.com/docs/en/developing/developer-faqs/)
+- [Query The Graph](https://thegraph.com/docs/en/querying/querying-the-graph/)
+- [Querying Best Practices](https://thegraph.com/docs/en/querying/querying-best-practices/)
+- [Querying from an Application](https://thegraph.com/docs/en/querying/querying-from-an-application/)
+- [GraphQL API](https://thegraph.com/docs/en/querying/graphql-api/)
+- [Subgraphs on NEAR](https://thegraph.com/docs/en/cookbook/near/)
+- [Subgraphs on Cosmos](https://thegraph.com/docs/en/cookbook/cosmos/)
+- [Subgraphs on Arweave](https://thegraph.com/docs/en/cookbook/arweave/)
+- [Substreams-powered subgraphs](https://thegraph.com/docs/en/cookbook/substreams-powered-subgraphs/)
+
 # Tools
 - [The Graph Hosted service](https://thegraph.com/hosted-service)
 - [SubgraphGPT](https://t.me/SubgraphGPT_bot)
-
-# Subgraphs hostings
-- [Chainstack](https://chainstack.com/subgraphs/)
-- [Satsuma](https://www.satsuma.xyz/)
-- [Goldsky](https://goldsky.com/)
 
 # GitHub repositories
 - [Messari Standard Subgraphs](https://github.com/messari/subgraphs). Standardized subgraphs for blockchain data
