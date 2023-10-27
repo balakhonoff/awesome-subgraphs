@@ -1,12 +1,7 @@
- # Awesome Subgraphs
+ # Awesome Subgraphs by [Chainstack](https://chainstack.com/subgraphs/) Subgraphs hosting
 A curated list of awesome resources related to [The Graph](https://thegraph.com/) powered subgraph development. 
 
 Feel free to send me any related links in [Twitter](https://twitter.com/balakhonoff) or [Telegram](https://t.me/kirill_balakhonov) to add them here.
-
-# Subgraphs hostings
-- [Chainstack](https://chainstack.com/subgraphs/)
-- [Satsuma](https://www.satsuma.xyz/)
-- [Goldsky](https://goldsky.com/)
 
 # Tutorials
 - [A beginner’s guide to getting started with The Graph](https://docs.chainstack.com/docs/subgraphs-tutorial-a-beginners-guide-to-getting-started-with-the-graph)
