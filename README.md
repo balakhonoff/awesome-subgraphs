@@ -24,6 +24,7 @@ Feel free to send me any related links in [Twitter](https://twitter.com/balakhon
 - [Create Lens Subgraph on The Graph Protocol](https://blog.devgenius.io/create-lens-subgraph-on-the-graph-protocol-8acfbac94ea8)
 - [Indexing data using The Graph's Indexer by LearnWeb3](https://learnweb3.io/lessons/indexing-data-using-the-graphs-indexer/)
 - [Writing a subgraph to get the friend.tech real-time trading data](https://docs.chainstack.com/docs/writing-a-subgraph-to-get-the-friendtech-real-time-trading-data)
+- [Tracking token total supply over millions of blocks: A guide to creating a subgraph and deploying to Chainstack](docs.chainstack.com/docs/tracking-token-total-supply-over-millions-of-blocks-a-guide-to-creating-a-subgraph-and-deploying-to-chainstack)
 
 # Videos
 - [Build a Subgraph in 5 Minutes: Supercharging Your DApp](https://www.youtube.com/watch?v=L8jYtr4omKM)
