@@ -1,0 +1,5 @@
+type TotalSupply @entity(immutable: true) {
+  id: Bytes!
+  value: BigInt! 
+  blockNumber: BigInt!
+}
